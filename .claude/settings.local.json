@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__5ab85497-c84d-4431-80d3-e4bafeaf7112__generate_image",
+      "mcp__5ab85497-c84d-4431-80d3-e4bafeaf7112__generate_image_batch",
+      "mcp__5ab85497-c84d-4431-80d3-e4bafeaf7112__jobs_wait",
+      "Bash(curl -s -o pf-minimal.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3GWFJsH2oAoO8ALDZAv7qswPgQf/hf_20260806_083520_eca486c8-bdce-4769-8088-f2bf2b5d0e9f.png\")",
+      "Bash(file *.png)",
+      "Bash(curl -s -o cine-building.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3GWFJsH2oAoO8ALDZAv7qswPgQf/hf_20260806_084435_4931fbd0-9ce2-47ba-9c22-461f55897eb9.png\")",
+      "Bash(curl -s -o cine-living.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3GWFJsH2oAoO8ALDZAv7qswPgQf/hf_20260806_084435_82b62906-a920-45d3-8f90-95c8775405c6.png\")",
+      "Bash(curl -s -o cine-kitchen.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3GWFJsH2oAoO8ALDZAv7qswPgQf/hf_20260806_084435_dc4df58b-e4dc-4f18-947e-211638237ac8.png\")",
+      "Bash(curl -s -o trust-person.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3GWFJsH2oAoO8ALDZAv7qswPgQf/hf_20260806_084435_062722a0-0497-472f-bd07-72dc440b224b.png\")"
+    ]
+  }
+}

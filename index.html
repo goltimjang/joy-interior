@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JOY INTERIOR | 공간에 기쁨을 더하다 · 20년 경력 인테리어</title>
+<meta name="description" content="20년 경력의 JOY INTERIOR. 아파트 주거 리모델링부터 카페·매장 상업공간까지, 상가 200건·아파트 100건 시공 노하우로 당신의 공간에 기쁨을 더합니다. 세종·전국 시공." />
+<meta name="theme-color" content="#A47551" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="JOY INTERIOR | 공간에 기쁨을 더하다" />
+<meta property="og:description" content="20년 경력 · 상가 200건 · 아파트 100건 시공. 주거·상업공간 인테리어 전문." />
+<meta property="og:type" content="website" />
+
+<!-- Pretendard 세련된 고딕 -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+<style>
+  :root{
+    --bg:#FAF7F2;
+    --surface:#FFFFFF;
+    --ink:#2A2420;
+    --ink-soft:#6E6155;
+    --ink-faint:#9C8F80;
+    --wood:#A47551;
+    --wood-dark:#7C5A3F;
+    --wood-deep:#5C4634;
+    --beige:#EADFCF;
+    --beige-soft:#F1E9DC;
+    --line:#E8DFD1;
+    --shadow:0 18px 50px -20px rgba(74,53,32,.28);
+    --shadow-soft:0 10px 30px -14px rgba(74,53,32,.20);
+    --radius:20px;
+    --max:1180px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    letter-spacing:-.01em;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--wood);color:#fff}
+
+  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--wood);margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--wood);opacity:.6}
+  h2.title{font-size:clamp(28px,4.4vw,44px);font-weight:800;line-height:1.25;letter-spacing:-.03em}
+  .lead{color:var(--ink-soft);font-size:clamp(15px,1.7vw,17px);margin-top:16px;max-width:560px}
+  section{position:relative}
+
+  /* ===== Reveal animation ===== */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
+  .reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* ===== Header ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .4s var(--ease),box-shadow .4s var(--ease),padding .4s var(--ease);
+    padding:22px 0;
+  }
+  header.scrolled{background:rgba(250,247,242,.85);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:14px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:inline-flex;align-items:center}
+  .logo-img{height:46px;width:auto;display:block;transition:filter .4s var(--ease)}
+  header.scrolled .logo-img{height:40px}
+  .logo-img{transition:filter .4s var(--ease),height .4s var(--ease)}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:15px;font-weight:500;color:var(--ink-soft);transition:color .25s;position:relative}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--wood);transition:width .3s var(--ease)}
+  .nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{width:100%}
+  .nav-cta{
+    background:var(--wood);color:#fff;padding:11px 22px;border-radius:100px;
+    font-size:14px;font-weight:600;letter-spacing:.02em;
+    box-shadow:var(--shadow-soft);transition:transform .25s var(--ease),background .25s;
+  }
+  .nav-cta:hover{background:var(--wood-dark);transform:translateY(-2px)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+  /* transparent header over cinematic hero */
+  header:not(.scrolled) .logo-img{filter:brightness(0) invert(1)}
+  header:not(.scrolled) .nav-links a{color:rgba(255,255,255,.82)}
+  header:not(.scrolled) .nav-links a:hover,header:not(.scrolled) .nav-links a.active{color:#fff}
+  header:not(.scrolled) .burger span{background:#fff}
+
+  /* ===== Hero ===== */
+  .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
+  .hero-bg{
+    position:absolute;inset:0;z-index:-2;
+    background:
+      radial-gradient(120% 90% at 78% 15%,rgba(164,117,81,.16),transparent 55%),
+      linear-gradient(160deg,#FBF8F3 0%,#F3E9DA 100%);
+  }
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(rgba(124,90,63,.05) 1px,transparent 1px);
+    background-size:22px 22px;mask-image:linear-gradient(180deg,#000,transparent 80%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;width:100%}
+  .hero-copy h1{
+    font-size:clamp(36px,6.2vw,66px);font-weight:800;line-height:1.12;letter-spacing:-.04em;
+  }
+  .hero-copy h1 .hl{color:var(--wood);position:relative;white-space:nowrap}
+  .hero-copy h1 .hl::after{content:"";position:absolute;left:-2%;right:-2%;bottom:6%;height:26%;background:rgba(164,117,81,.16);z-index:-1;border-radius:4px}
+  .hero-sub{margin-top:26px;font-size:clamp(16px,2vw,19px);color:var(--ink-soft);max-width:480px}
+  .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .tag{
+    font-size:13.5px;font-weight:500;color:var(--wood-dark);
+    background:rgba(255,255,255,.7);border:1px solid var(--line);
+    padding:8px 15px;border-radius:100px;backdrop-filter:blur(4px);
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;font-size:16px;font-weight:600;
+    padding:16px 30px;border-radius:100px;transition:transform .25s var(--ease),box-shadow .25s;cursor:pointer;border:none;
+  }
+  .btn-primary{background:var(--wood);color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 24px 50px -18px rgba(124,90,63,.5)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--beige)}
+  .btn-ghost:hover{border-color:var(--wood);color:var(--wood-dark);transform:translateY(-3px)}
+  .btn svg{width:19px;height:19px}
+
+  /* hero visual */
+  .hero-visual{position:relative;height:520px}
+  .hv-card{position:absolute;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .hv-main{inset:0;top:36px;bottom:36px;left:8%;right:0}
+  .hv-float{
+    width:150px;height:180px;bottom:-14px;left:-20px;border:6px solid #fff;
+    animation:floaty 6s ease-in-out infinite;
+  }
+  .hv-badge{
+    position:absolute;top:8px;right:6%;background:#fff;border-radius:16px;padding:16px 20px;
+    box-shadow:var(--shadow);text-align:center;animation:floaty 5s ease-in-out infinite .5s;
+  }
+  .hv-badge .n{font-size:26px;font-weight:800;color:var(--wood);line-height:1}
+  .hv-badge .l{font-size:12px;color:var(--ink-faint);margin-top:4px}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .ph{background-size:cover;background-position:center;width:100%;height:100%}
+  .hv-card img,img.ph{width:100%;height:100%;object-fit:cover;display:block}
+  .ph1{background-image:linear-gradient(135deg,#C9A882,#8A6647)}
+  .ph2{background-image:linear-gradient(135deg,#D8C3A5,#A6835C)}
+
+  /* ===== Stats ===== */
+  .stats{padding:clamp(74px,9vw,108px) 0;color:#fff;position:relative;overflow:hidden;background:var(--wood-deep)}
+  .stats::before{content:"";position:absolute;inset:0;background:url(images/cine-building.png) center/cover;opacity:.13;filter:saturate(.8)}
+  .stats::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,33,22,.82),rgba(38,27,18,.92))}
+  .stats .wrap{position:relative;z-index:2}
+  .stats-label{text-align:center;margin-bottom:52px}
+  .stats-label .e{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.22em;color:var(--beige)}
+  .stats-label .e::before,.stats-label .e::after{content:"";width:26px;height:1px;background:var(--beige);opacity:.6}
+  .stats-label h3{margin-top:16px;font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.03em;color:#fff}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+  .stats-grid .stat{position:relative}
+  .stats-grid .stat:not(:last-child)::after{content:"";position:absolute;right:-15px;top:12%;height:76%;width:1px;background:rgba(255,255,255,.14)}
+  @media (max-width:980px){.stats-grid .stat:not(:last-child)::after{display:none}}
+  .stat .num{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1}
+  .stat .num .suf{color:var(--beige);font-size:.62em;margin-left:2px}
+  .stat .cap{margin-top:12px;font-size:14.5px;color:rgba(255,255,255,.72);font-weight:500}
+  .stat .cap b{color:#fff;font-weight:600}
+  .stat-divider{width:1px;background:rgba(255,255,255,.14)}
+
+  /* ===== Section shell ===== */
+  .sec{padding:clamp(80px,11vw,140px) 0}
+  .sec-head{max-width:600px;margin-bottom:60px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head.center .lead{margin-left:auto;margin-right:auto}
+
+  /* ===== Services ===== */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:38px 32px;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;
+  }
+  .svc:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:transparent}
+  .svc-ic{
+    width:58px;height:58px;border-radius:16px;display:grid;place-items:center;margin-bottom:22px;
+    background:var(--beige-soft);color:var(--wood-dark);
+  }
+  .svc-ic svg{width:28px;height:28px}
+  .svc h3{font-size:20px;font-weight:700;margin-bottom:10px}
+  .svc p{color:var(--ink-soft);font-size:15px}
+  .svc .items{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
+  .svc .items span{font-size:12.5px;color:var(--wood-dark);background:var(--beige-soft);padding:5px 11px;border-radius:100px}
+
+  /* ===== Services zig-zag ===== */
+  .svc-rows{display:flex;flex-direction:column;gap:clamp(52px,7vw,96px)}
+  .svc-row{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(36px,5vw,72px);align-items:center}
+  .svc-row:nth-child(even) .svc-media{order:2}
+  .svc-media{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:5/4;box-shadow:var(--shadow)}
+  .svc-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+  .svc-row:hover .svc-media img{transform:scale(1.05)}
+  .svc-media .tagfloat{position:absolute;left:18px;top:18px;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);padding:8px 15px;border-radius:100px;font-size:13px;font-weight:700;color:var(--wood-dark);box-shadow:var(--shadow-soft)}
+  .svc-num{font-size:13.5px;font-weight:700;letter-spacing:.18em;color:var(--wood)}
+  .svc-body h3{font-size:clamp(25px,3vw,34px);font-weight:800;letter-spacing:-.03em;margin:14px 0 15px;line-height:1.2}
+  .svc-body>p{color:var(--ink-soft);font-size:16px;max-width:440px;line-height:1.75}
+  .svc-feats{margin-top:26px;display:flex;flex-direction:column;gap:13px}
+  .svc-feat{display:flex;align-items:center;gap:13px;font-size:15.5px;color:var(--ink);font-weight:500}
+  .svc-feat .ck{width:25px;height:25px;border-radius:50%;background:var(--beige-soft);color:var(--wood-dark);display:grid;place-items:center;flex-shrink:0}
+  .svc-feat .ck svg{width:14px;height:14px}
+  @media (max-width:860px){
+    .svc-row{grid-template-columns:1fr;gap:26px}
+    .svc-row .svc-media{order:0 !important}
+  }
+
+  /* ===== Portfolio ===== */
+  .pf-filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:44px}
+  .pf-filter button{
+    font-family:inherit;font-size:14.5px;font-weight:600;color:var(--ink-soft);
+    background:transparent;border:1.5px solid var(--line);padding:10px 22px;border-radius:100px;
+    cursor:pointer;transition:.25s;
+  }
+  .pf-filter button.on,.pf-filter button:hover{background:var(--wood);border-color:var(--wood);color:#fff}
+  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .pf-item{
+    position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;cursor:pointer;
+    box-shadow:var(--shadow-soft);transition:transform .3s;
+  }
+  .pf-item:hover{transform:translateY(-6px)}
+  .pf-item .ph{transition:transform .8s var(--ease)}
+  .pf-item:hover .ph{transform:scale(1.07)}
+  .pf-item .ov{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;
+    background:linear-gradient(0deg,rgba(41,27,17,.82) 0%,rgba(41,27,17,.15) 45%,transparent 70%);color:#fff;
+  }
+  .pf-item .ov .cat{font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--beige);text-transform:uppercase;margin-bottom:6px}
+  .pf-item .ov h4{font-size:19px;font-weight:700}
+  .pf-item .ov p{font-size:13.5px;color:rgba(255,255,255,.8);margin-top:4px}
+  .pf-a{background-image:linear-gradient(135deg,#BE9B72,#7E5C3D)}
+  .pf-b{background-image:linear-gradient(135deg,#CBB18C,#9A7550)}
+  .pf-c{background-image:linear-gradient(135deg,#A9825C,#5E4531)}
+  .pf-d{background-image:linear-gradient(135deg,#D3BE9C,#A17E56)}
+  .pf-e{background-image:linear-gradient(135deg,#B08E68,#6B4E35)}
+  .pf-f{background-image:linear-gradient(135deg,#C4A87F,#8B6844)}
+
+  /* ===== Process ===== */
+  .proc{background:var(--beige-soft)}
+  .proc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;position:relative}
+  .proc-step{position:relative;text-align:center}
+  .proc-step .dot{
+    width:76px;height:76px;margin:0 auto 22px;border-radius:50%;background:var(--surface);
+    border:1.5px solid var(--line);display:grid;place-items:center;color:var(--wood-dark);
+    position:relative;z-index:2;transition:.4s var(--ease);box-shadow:var(--shadow-soft);
+  }
+  .proc-step:hover .dot{background:var(--wood);border-color:var(--wood);color:#fff;transform:translateY(-6px)}
+  .proc-step .dot svg{width:30px;height:30px}
+  .proc-step .dot .badge{
+    position:absolute;top:-5px;right:-5px;width:27px;height:27px;border-radius:50%;
+    background:var(--wood);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center;
+    box-shadow:0 4px 12px -4px rgba(124,90,63,.6);transition:.4s var(--ease);
+  }
+  .proc-step:hover .dot .badge{background:var(--wood-deep);transform:scale(1.1)}
+  .proc-step .st{font-size:11.5px;font-weight:700;letter-spacing:.16em;color:var(--wood);margin-bottom:7px}
+  .proc-step h4{font-size:17.5px;font-weight:700;margin-bottom:8px;letter-spacing:-.02em}
+  .proc-step p{font-size:13.5px;color:var(--ink-soft);line-height:1.65;max-width:180px;margin:0 auto}
+  .proc-grid::before{
+    content:"";position:absolute;top:38px;left:10%;right:10%;height:2px;z-index:0;
+    background:linear-gradient(90deg,var(--wood) 0%,var(--beige) 50%,var(--wood) 100%);opacity:.4;
+  }
+
+  /* ===== Reviews ===== */
+  .rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .rv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+  .rv .stars{color:var(--wood);font-size:16px;letter-spacing:2px;margin-bottom:14px}
+  .rv p{font-size:15px;color:var(--ink);line-height:1.75}
+  .rv .who{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px}
+  .rv .who .av{width:42px;height:42px;border-radius:50%;background:var(--wood);color:#fff;display:grid;place-items:center;font-weight:700}
+  .rv .who .meta b{display:block;font-size:14.5px;font-weight:700}
+  .rv .who .meta span{font-size:12.5px;color:var(--ink-faint)}
+
+  /* ===== FAQ ===== */
+  .faq-wrap{max-width:800px;margin:0 auto}
+  .faq{border-bottom:1px solid var(--line)}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;font-family:inherit;cursor:pointer;
+    padding:26px 4px;display:flex;justify-content:space-between;align-items:center;gap:20px;
+    font-size:17px;font-weight:600;color:var(--ink);
+  }
+  .faq-q .ico{flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--beige);display:grid;place-items:center;transition:.3s var(--ease);color:var(--wood-dark)}
+  .faq.open .faq-q .ico{background:var(--wood);border-color:var(--wood);color:#fff;transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+  .faq-a p{padding:0 4px 26px;color:var(--ink-soft);font-size:15px}
+
+  /* ===== CTA / Contact ===== */
+  .contact{background:var(--wood-deep);color:#fff;position:relative;overflow:hidden}
+  .contact::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 80% 0%,rgba(234,223,207,.14),transparent 60%)}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative}
+  .contact h2{font-size:clamp(30px,4.6vw,46px);font-weight:800;line-height:1.2;letter-spacing:-.03em}
+  .contact .lead{color:rgba(255,255,255,.78)}
+  .contact-info{margin-top:36px;display:flex;flex-direction:column;gap:18px}
+  .ci{display:flex;align-items:center;gap:16px}
+  .ci .ic{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.09);display:grid;place-items:center;flex-shrink:0}
+  .ci .ic svg{width:22px;height:22px;color:var(--beige)}
+  .ci .t span{display:block;font-size:12.5px;color:rgba(255,255,255,.55)}
+  .ci .t b{font-size:16.5px;font-weight:600}
+  .call-card{background:var(--surface);border-radius:24px;padding:40px 34px;text-align:center;color:var(--ink);box-shadow:var(--shadow)}
+  .call-card .k{font-size:14px;color:var(--ink-faint);font-weight:600;letter-spacing:.02em}
+  .call-card .num{font-size:clamp(30px,5vw,40px);font-weight:800;color:var(--wood-dark);margin:10px 0 4px;letter-spacing:-.02em}
+  .call-card .hrs{font-size:13.5px;color:var(--ink-soft);margin-bottom:26px}
+  .call-card .btn-primary{width:100%;justify-content:center;font-size:17px}
+  .call-card .btn-mail{width:100%;justify-content:center;margin-top:12px;background:var(--beige-soft);color:var(--wood-dark)}
+  .call-card .btn-mail:hover{background:var(--beige);transform:translateY(-3px)}
+
+  /* ===== Footer ===== */
+  footer{background:#211913;color:rgba(255,255,255,.6);padding:56px 0 34px;font-size:14px}
+  .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-logo-img{height:56px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.92}
+  .foot-desc{margin-top:14px;max-width:340px;line-height:1.7}
+  .foot-col h5{color:#fff;font-size:14px;font-weight:700;margin-bottom:14px;letter-spacing:.02em}
+  .foot-col p{margin-bottom:8px}
+  .foot-bottom{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.4)}
+
+  /* ===== Floating call ===== */
+  .float-call{
+    position:fixed;right:22px;bottom:22px;z-index:90;
+    display:inline-flex;align-items:center;gap:10px;background:var(--wood);color:#fff;
+    padding:15px 22px;border-radius:100px;font-weight:700;font-size:15px;
+    box-shadow:0 16px 40px -12px rgba(124,90,63,.6);
+    transition:transform .3s var(--ease);animation:pulse 2.6s infinite;
+  }
+  .float-call:hover{transform:translateY(-4px) scale(1.03)}
+  .float-call svg{width:20px;height:20px}
+  @keyframes pulse{0%{box-shadow:0 16px 40px -12px rgba(124,90,63,.6),0 0 0 0 rgba(164,117,81,.4)}70%{box-shadow:0 16px 40px -12px rgba(124,90,63,.6),0 0 0 16px rgba(164,117,81,0)}100%{box-shadow:0 16px 40px -12px rgba(124,90,63,.6),0 0 0 0 rgba(164,117,81,0)}}
+
+  /* ===== Scroll progress bar ===== */
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:101;background:linear-gradient(90deg,var(--wood),var(--wood-dark))}
+
+  /* ===== Nav active ===== */
+  .nav-links a.active{color:var(--ink)}
+  .nav-links a.active::after{width:100%}
+
+  /* ===== Hero scroll indicator ===== */
+  .scroll-ind{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;color:var(--ink-faint);font-size:11px;letter-spacing:.22em;font-weight:600;z-index:5}
+  .scroll-ind .mouse{width:23px;height:37px;border:1.8px solid var(--wood);border-radius:14px;position:relative;opacity:.6}
+  .scroll-ind .mouse::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:3.5px;height:7px;background:var(--wood);border-radius:2px;animation:scrolldot 1.7s var(--ease) infinite}
+  @keyframes scrolldot{0%{opacity:0;transform:translate(-50%,0)}30%{opacity:1}70%{opacity:1;transform:translate(-50%,11px)}100%{opacity:0;transform:translate(-50%,11px)}}
+
+  /* ===== Section number ===== */
+  .sec-head .eyebrow .idx{color:var(--ink-faint);font-weight:700;opacity:.7}
+
+  /* ===== Image reveal zoom ===== */
+  .pf-item .ph{transform:scale(1.08);transition:transform 1s var(--ease)}
+  .pf-item.in .ph{transform:scale(1)}
+  .pf-item.in:hover .ph{transform:scale(1.07)}
+
+  /* ===== Mobile menu ===== */
+  .mobile-menu{
+    position:fixed;inset:0;z-index:99;background:rgba(250,247,242,.98);backdrop-filter:blur(10px);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+    opacity:0;pointer-events:none;transition:opacity .35s var(--ease);
+  }
+  .mobile-menu.open{opacity:1;pointer-events:auto}
+  .mobile-menu a{font-size:24px;font-weight:700;color:var(--ink)}
+  .mobile-menu .close{position:absolute;top:26px;right:26px;font-size:34px;cursor:pointer;color:var(--ink)}
+
+  /* ===== Cinematic scroll hero ===== */
+  .cine{position:relative;height:360vh;background:#171009}
+  .cine-sticky{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden;background:#171009}
+  .cine-stage{position:absolute;inset:0}
+  .cine-layer{position:absolute;inset:0;opacity:0;will-change:opacity,transform;transform-origin:52% 48%}
+  .cine-layer img{width:100%;height:100%;object-fit:cover}
+  .cine-layer[data-i="0"]{opacity:1}
+  .cine-scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(19,12,7,.62) 0%,rgba(19,12,7,.12) 26%,rgba(19,12,7,.20) 60%,rgba(19,12,7,.78) 100%)}
+  .cine-caps{position:absolute;inset:0}
+  .cine-cap{position:absolute;inset:0;display:flex;align-items:center;opacity:0;will-change:opacity}
+  .cine-cap .box{max-width:620px;will-change:transform}
+  .cine-cap .c-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.24em;color:var(--beige);margin-bottom:20px}
+  .cine-cap .c-eyebrow::before{content:"";width:30px;height:1px;background:var(--beige);opacity:.7}
+  .cine-cap h1{color:#fff;font-size:clamp(40px,7vw,80px);font-weight:800;line-height:1.06;letter-spacing:-.045em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+  .cine-cap h1 em{font-style:normal;color:var(--beige)}
+  .cine-cap h2{color:#fff;font-size:clamp(32px,5.4vw,62px);font-weight:800;line-height:1.1;letter-spacing:-.04em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+  .cine-cap p{color:rgba(255,255,255,.86);font-size:clamp(16px,1.9vw,19px);margin-top:22px;max-width:480px;text-shadow:0 1px 20px rgba(0,0,0,.3)}
+  .cine-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .btn-ghost-light{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4);backdrop-filter:blur(6px)}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.2);border-color:#fff;transform:translateY(-3px)}
+  .cine-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;color:rgba(255,255,255,.75);font-size:11px;letter-spacing:.24em;font-weight:600;transition:opacity .4s}
+  .cine-hint .mouse{width:23px;height:37px;border:1.8px solid rgba(255,255,255,.7);border-radius:14px;position:relative}
+  .cine-hint .mouse::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:3.5px;height:7px;background:#fff;border-radius:2px;animation:scrolldot 1.7s var(--ease) infinite}
+  .cine-dots{position:absolute;right:34px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:6}
+  .cine-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);transition:.4s var(--ease)}
+  .cine-dots span.on{background:var(--beige);height:26px;border-radius:5px}
+
+  /* ===== Reviews carousel ===== */
+  .rv-viewport{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .rv-track{display:flex;gap:24px;width:max-content;will-change:transform;animation:rvscroll 46s linear infinite}
+  .rv-viewport:hover .rv-track{animation-play-state:paused}
+  @keyframes rvscroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 12px))}}
+  .rv-track .rv{width:360px;flex:0 0 360px}
+  @media (max-width:640px){.rv-track .rv{width:290px;flex:0 0 290px}}
+
+  /* ===== Trust person ===== */
+  .trust{position:relative;overflow:hidden;background:var(--bg)}
+  .trust-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center}
+  .trust-photo{position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5}
+  .trust-photo img{width:100%;height:100%;object-fit:cover}
+  .trust-photo .sig{position:absolute;left:22px;bottom:20px;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.5)}
+  .trust-photo .sig b{display:block;font-size:18px;font-weight:700}
+  .trust-photo .sig span{font-size:13px;color:rgba(255,255,255,.85)}
+  .trust-quote{font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.45;letter-spacing:-.02em;color:var(--ink)}
+  .trust-quote .em{color:var(--wood-dark);background:linear-gradient(180deg,transparent 62%,rgba(164,117,81,.18) 62%)}
+  .trust-sign{margin-top:26px;color:var(--ink-soft);font-size:15px}
+  .trust-sign b{color:var(--ink);font-weight:700}
+
+  /* ===== Responsive ===== */
+  @media (max-width:980px){
+    .cine{height:340vh}
+    .cine-dots{right:18px}
+    .cine-cap p{max-width:none}
+    .trust-grid{grid-template-columns:1fr;gap:36px}
+    .trust-photo{max-width:420px;margin:0 auto}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-visual{height:400px;order:-1}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:36px 20px}
+    .stat-divider{display:none}
+    .svc-grid,.pf-grid,.rv-grid{grid-template-columns:1fr 1fr}
+    .proc-grid{grid-template-columns:repeat(2,1fr);gap:34px 20px}
+    .proc-grid::before{display:none}
+    .contact-grid{grid-template-columns:1fr;gap:40px}
+  }
+  @media (max-width:640px){
+    .nav-links{display:none}
+    .burger{display:flex}
+    .nav-cta{display:none}
+    .svc-grid,.pf-grid,.rv-grid,.proc-grid{grid-template-columns:1fr}
+    .hero-visual{height:340px}
+    .float-call span{display:none}
+    .float-call{padding:16px;border-radius:50%}
+    .cine{height:300vh}
+    .cine-dots{display:none}
+    .cine-cap .box{max-width:none;padding-right:10px}
+    .rv-track{animation-duration:32s}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#home" class="logo"><img class="logo-img" src="images/logo-dark.png" alt="JOY INTERIOR" /></a>
+    <nav class="nav-links">
+      <a href="#service">서비스</a>
+      <a href="#portfolio">시공사례</a>
+      <a href="#process">진행과정</a>
+      <a href="#review">고객후기</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="tel:010-3714-5227" class="nav-cta">상담 문의 →</a>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="close" id="menuClose">×</div>
+  <a href="#service">서비스</a>
+  <a href="#portfolio">시공사례</a>
+  <a href="#process">진행과정</a>
+  <a href="#review">고객후기</a>
+  <a href="#faq">FAQ</a>
+  <a href="tel:010-3714-5227" style="color:var(--wood)">전화 상담 →</a>
+</div>
+
+<!-- ===== CINEMATIC HERO ===== -->
+<section class="cine" id="home">
+  <div class="cine-sticky">
+    <div class="cine-stage">
+      <div class="cine-layer" data-i="0"><img src="images/cine-building.png" alt="따뜻한 우드와 스톤으로 지은 건물 외관, 황혼" /></div>
+      <div class="cine-layer" data-i="1"><img src="images/cine-living.png" alt="자연광이 드는 따뜻한 거실 인테리어" /></div>
+      <div class="cine-layer" data-i="2"><img src="images/cine-kitchen.png" alt="우드톤 주방 인테리어" /></div>
+    </div>
+    <div class="cine-scrim"></div>
+
+    <div class="cine-caps">
+      <div class="cine-cap" data-c="0"><div class="wrap"><div class="box">
+        <span class="c-eyebrow">JOY INTERIOR · SINCE 20 YEARS</span>
+        <h1>문을 열면,<br><em>기쁨</em>이 시작됩니다</h1>
+        <p>20년 경력의 손끝으로 완성하는 공간.<br>스크롤을 내려 JOY INTERIOR의 공간으로 들어와 보세요.</p>
+      </div></div></div>
+      <div class="cine-cap" data-c="1"><div class="wrap"><div class="box">
+        <span class="c-eyebrow">LIVING · 거실</span>
+        <h2>하루가 머무는 거실</h2>
+        <p>가족의 동선과 볕의 방향까지 헤아려, 매일이 편안해지는 공간을 만듭니다.</p>
+      </div></div></div>
+      <div class="cine-cap" data-c="2"><div class="wrap"><div class="box">
+        <span class="c-eyebrow">KITCHEN · 주방</span>
+        <h2>요리가 즐거워지는 주방</h2>
+        <p>동선과 수납까지 계산된, 매일이 특별해지는 따뜻한 우드톤 주방.</p>
+        <div class="cine-actions">
+          <a href="tel:010-3714-5227" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            전화 상담하기
+          </a>
+          <a href="#portfolio" class="btn btn-ghost-light">시공사례 둘러보기</a>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="cine-dots"><span data-d="0" class="on"></span><span data-d="1"></span><span data-d="2"></span></div>
+    <div class="cine-hint"><span>SCROLL</span><div class="mouse"></div></div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-label reveal">
+      <span class="e">WHY JOY INTERIOR</span>
+      <h3>숫자로 증명하는 20년의 신뢰</h3>
+    </div>
+    <div class="stats-grid">
+    <div class="stat reveal"><div class="num" data-count="20" data-suffix="년">0</div><div class="cap"><b>탄탄한</b> 시공 경력</div></div>
+    <div class="stat reveal d1"><div class="num" data-count="200" data-suffix="+">0</div><div class="cap"><b>상가·매장</b> 시공</div></div>
+    <div class="stat reveal d2"><div class="num" data-count="100" data-suffix="+">0</div><div class="cap"><b>아파트·주거</b> 시공</div></div>
+    <div class="stat reveal d3"><div class="num" data-count="98" data-suffix="%">0</div><div class="cap"><b>고객 만족·재의뢰율</b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE ===== -->
+<section class="sec" id="service">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="idx">01</span> OUR SERVICE</span>
+      <h2 class="title">공간의 성격에 맞춘<br>맞춤형 인테리어</h2>
+      <p class="lead">주거부터 상업공간까지, 20년간 쌓아온 시공 노하우로 공간의 목적과 라이프스타일에 꼭 맞는 설계와 시공을 제안합니다.</p>
+    </div>
+    <div class="svc-rows">
+      <div class="svc-row reveal">
+        <div class="svc-media"><img loading="lazy" src="images/cine-living.png" alt="주거 리모델링 거실 사례" /><span class="tagfloat">RESIDENTIAL</span></div>
+        <div class="svc-body">
+          <span class="svc-num">01 — 주거 리모델링</span>
+          <h3>매일이 편안한 우리 집</h3>
+          <p>아파트·빌라·주택까지. 낡은 공간을 가족의 생활 동선과 취향에 맞춰 처음부터 다시 완성합니다.</p>
+          <div class="svc-feats">
+            <div class="svc-feat"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>전체 올수리 · 부분 리모델링</div>
+            <div class="svc-feat"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>확장 · 구조변경 · 발코니 시공</div>
+            <div class="svc-feat"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>3D 설계 · 자재 셀렉 컨설팅</div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-row reveal">
+        <div class="svc-media"><img loading="lazy" src="images/pf-cafe.png" alt="상업공간 카페 인테리어 사례" /><span class="tagfloat">COMMERCIAL</span></div>
+        <div class="svc-body">
+          <span class="svc-num">02 — 상업공간</span>
+          <h3>매출이 오르는 공간 설계</h3>
+          <p>카페·음식점·사무실·매장. 브랜드 컨셉과 손님의 동선을 함께 읽어, 머물고 싶은 공간을 만듭니다.</p>
+          <div class="svc-feats">
+            <div class="svc-feat"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>카페 · 음식점 · 매장</div>
+            <div class="svc-feat"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>사무실 · 학원 · 오피스</div>
+            <div class="svc-feat"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>브랜드 컨셉 · 간판 · 사인 컨설팅</div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-row reveal">
+        <div class="svc-media"><img loading="lazy" src="images/cine-kitchen.png" alt="부분 시공 주방 사례" /><span class="tagfloat">PARTIAL</span></div>
+        <div class="svc-body">
+          <span class="svc-num">03 — 부분 시공</span>
+          <h3>필요한 곳만, 확실하게</h3>
+          <p>주방·욕실·도배·바닥 등 원하는 부분만. 합리적인 예산 안에서 공간의 인상을 바꿔 드립니다.</p>
+          <div class="svc-feats">
+            <div class="svc-feat"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>주방 · 욕실 리모델링</div>
+            <div class="svc-feat"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>도배 · 장판 · 마루</div>
+            <div class="svc-feat"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>필름 · 타일 · 조명</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTFOLIO ===== -->
+<section class="sec" id="portfolio" style="background:var(--beige-soft)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="idx">02</span> PORTFOLIO</span>
+      <h2 class="title">JOY INTERIOR의 시공 사례</h2>
+      <p class="lead">직접 시공한 현장의 이야기. 공간마다 담긴 정성과 디테일을 확인해 보세요.</p>
+    </div>
+    <div class="pf-filter reveal d1">
+      <button class="on" data-f="all">전체</button>
+      <button data-f="home">주거</button>
+      <button data-f="shop">상업공간</button>
+      <button data-f="part">부분시공</button>
+    </div>
+    <div class="pf-grid" id="pfGrid">
+      <div class="pf-item reveal" data-cat="home"><img class="ph" loading="lazy" src="images/pf-home1.png" alt="따뜻한 우드톤 아파트 전체 리모델링" /><div class="ov"><span class="cat">주거 · 34py</span><h4>따뜻한 우드톤 아파트</h4><p>세종 · 전체 리모델링</p></div></div>
+      <div class="pf-item reveal d1" data-cat="shop"><img class="ph" loading="lazy" src="images/pf-cafe.png" alt="내추럴 감성 카페 인테리어" /><div class="ov"><span class="cat">상업 · 카페</span><h4>내추럴 감성 카페</h4><p>브랜드 맞춤 설계</p></div></div>
+      <div class="pf-item reveal d2" data-cat="home"><img class="ph" loading="lazy" src="images/pf-minimal.png" alt="미니멀 신혼집 인테리어" /><div class="ov"><span class="cat">주거 · 24py</span><h4>미니멀 신혼집</h4><p>구조변경 · 확장</p></div></div>
+      <div class="pf-item reveal" data-cat="part"><img class="ph" loading="lazy" src="images/pf-kitchen.png" alt="주방 리모델링 부분 시공" /><div class="ov"><span class="cat">부분 · 주방</span><h4>주방 리모델링</h4><p>수납 극대화</p></div></div>
+      <div class="pf-item reveal d1" data-cat="shop"><img class="ph" loading="lazy" src="images/pf-office.png" alt="모던 오피스 사무공간 인테리어" /><div class="ov"><span class="cat">상업 · 매장</span><h4>모던 오피스</h4><p>사무공간 리뉴얼</p></div></div>
+      <div class="pf-item reveal d2" data-cat="part"><img class="ph" loading="lazy" src="images/pf-bathroom.png" alt="호텔식 욕실 타일 시공" /><div class="ov"><span class="cat">부분 · 욕실</span><h4>호텔식 욕실</h4><p>타일 · 방수 시공</p></div></div>
+    </div>
+    <p style="text-align:center;margin-top:34px;color:var(--ink-faint);font-size:14px" class="reveal">* 현재 이미지는 스타일 예시이며, 실제 시공 사진으로 업데이트됩니다.</p>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="sec proc" id="process">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="idx">03</span> PROCESS</span>
+      <h2 class="title">투명하고 꼼꼼한 5단계 진행</h2>
+      <p class="lead">상담부터 사후관리까지, 모든 과정을 고객과 함께 확인하며 진행합니다.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step reveal"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="badge">01</span></div><div class="st">STEP 01</div><h4>상담 문의</h4><p>전화·방문 상담으로 원하는 공간을 파악합니다.</p></div>
+      <div class="proc-step reveal d1"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 4 4 5-6"/></svg><span class="badge">02</span></div><div class="st">STEP 02</div><h4>현장 실측</h4><p>직접 방문해 정확히 측정하고 견적을 산출합니다.</p></div>
+      <div class="proc-step reveal d2"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg><span class="badge">03</span></div><div class="st">STEP 03</div><h4>디자인 설계</h4><p>스타일과 예산에 맞는 3D·도면을 제안합니다.</p></div>
+      <div class="proc-step reveal d3"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><span class="badge">04</span></div><div class="st">STEP 04</div><h4>책임 시공</h4><p>숙련된 팀이 공정별로 꼼꼼하게 시공합니다.</p></div>
+      <div class="proc-step reveal d4"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 1 0 9 9"/></svg><span class="badge">05</span></div><div class="st">STEP 05</div><h4>사후 관리(A/S)</h4><p>시공 후에도 책임지고 관리해 드립니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEW ===== -->
+<section class="sec" id="review">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="idx">04</span> REVIEW</span>
+      <h2 class="title">고객이 남긴 진심</h2>
+      <p class="lead">JOY INTERIOR와 함께한 고객들의 후기입니다.</p>
+    </div>
+  </div>
+  <div class="rv-viewport reveal d1">
+    <div class="rv-track">
+      <div class="rv"><div class="stars">★★★★★</div><p>“20년 경력이 괜히 있는 게 아니더라고요. 실측부터 마감까지 하나하나 꼼꼼하게 챙겨주셔서 믿고 맡겼습니다. 완성된 집을 보고 정말 만족했어요.”</p><div class="who"><div class="av">김</div><div class="meta"><b>김○○ 고객님</b><span>세종 · 32py 아파트 전체</span></div></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><p>“카페 오픈 준비로 정신없었는데, 브랜드 컨셉을 정확히 이해하고 공간을 만들어 주셨어요. 손님들이 인테리어 예쁘다는 말을 제일 많이 합니다.”</p><div class="who"><div class="av">이</div><div class="meta"><b>이○○ 사장님</b><span>카페 창업 · 상업공간</span></div></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><p>“주방만 부분 시공했는데도 예산 맞춰서 최선을 다해주셨어요. 작은 공사도 소홀히 하지 않는 모습에 다음에 또 맡기려고 합니다.”</p><div class="who"><div class="av">박</div><div class="meta"><b>박○○ 고객님</b><span>주방 부분 리모델링</span></div></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><p>“오래된 20년 된 집이라 걱정이 많았는데, 구조부터 다시 잡아 주셔서 완전히 새집이 됐어요. 진행 상황도 매일 알려주셔서 안심됐습니다.”</p><div class="who"><div class="av">정</div><div class="meta"><b>정○○ 고객님</b><span>세종 도담동 · 24py 신혼집</span></div></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><p>“학원 공간이라 방음과 동선이 중요했는데, 세심하게 설계해 주셨어요. 학부모님들께 시설 좋다는 이야기를 정말 많이 듣습니다.”</p><div class="who"><div class="av">최</div><div class="meta"><b>최○○ 원장님</b><span>교습학원 · 상업공간</span></div></div></div>
+      <!-- duplicate set for seamless loop -->
+      <div class="rv" aria-hidden="true"><div class="stars">★★★★★</div><p>“20년 경력이 괜히 있는 게 아니더라고요. 실측부터 마감까지 하나하나 꼼꼼하게 챙겨주셔서 믿고 맡겼습니다. 완성된 집을 보고 정말 만족했어요.”</p><div class="who"><div class="av">김</div><div class="meta"><b>김○○ 고객님</b><span>세종 · 32py 아파트 전체</span></div></div></div>
+      <div class="rv" aria-hidden="true"><div class="stars">★★★★★</div><p>“카페 오픈 준비로 정신없었는데, 브랜드 컨셉을 정확히 이해하고 공간을 만들어 주셨어요. 손님들이 인테리어 예쁘다는 말을 제일 많이 합니다.”</p><div class="who"><div class="av">이</div><div class="meta"><b>이○○ 사장님</b><span>카페 창업 · 상업공간</span></div></div></div>
+      <div class="rv" aria-hidden="true"><div class="stars">★★★★★</div><p>“주방만 부분 시공했는데도 예산 맞춰서 최선을 다해주셨어요. 작은 공사도 소홀히 하지 않는 모습에 다음에 또 맡기려고 합니다.”</p><div class="who"><div class="av">박</div><div class="meta"><b>박○○ 고객님</b><span>주방 부분 리모델링</span></div></div></div>
+      <div class="rv" aria-hidden="true"><div class="stars">★★★★★</div><p>“오래된 20년 된 집이라 걱정이 많았는데, 구조부터 다시 잡아 주셔서 완전히 새집이 됐어요. 진행 상황도 매일 알려주셔서 안심됐습니다.”</p><div class="who"><div class="av">정</div><div class="meta"><b>정○○ 고객님</b><span>세종 도담동 · 24py 신혼집</span></div></div></div>
+      <div class="rv" aria-hidden="true"><div class="stars">★★★★★</div><p>“학원 공간이라 방음과 동선이 중요했는데, 세심하게 설계해 주셨어요. 학부모님들께 시설 좋다는 이야기를 정말 많이 듣습니다.”</p><div class="who"><div class="av">최</div><div class="meta"><b>최○○ 원장님</b><span>교습학원 · 상업공간</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec" id="faq" style="background:var(--beige-soft)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="idx">05</span> FAQ</span>
+      <h2 class="title">자주 묻는 질문</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq reveal"><button class="faq-q">상담과 현장 방문 견적은 비용이 드나요?<span class="ico">+</span></button><div class="faq-a"><p>상담과 현장 실측 견적은 무료로 진행됩니다. 편하게 전화 주시면 일정을 잡아 방문해 정확한 견적을 안내해 드립니다.</p></div></div>
+      <div class="faq reveal"><button class="faq-q">시공 기간은 보통 얼마나 걸리나요?<span class="ico">+</span></button><div class="faq-a"><p>공간의 규모와 공사 범위에 따라 다릅니다. 부분 시공은 며칠, 아파트 전체 리모델링은 보통 3~5주 정도 소요되며, 상담 시 정확한 일정을 안내해 드립니다.</p></div></div>
+      <div class="faq reveal"><button class="faq-q">시공 지역은 어디까지 가능한가요?<span class="ico">+</span></button><div class="faq-a"><p>세종시를 중심으로 인근 지역까지 시공하며, 규모에 따라 그 외 지역도 상담 가능합니다. 먼저 전화로 문의해 주세요.</p></div></div>
+      <div class="faq reveal"><button class="faq-q">시공 후 하자가 생기면 A/S가 되나요?<span class="ico">+</span></button><div class="faq-a"><p>물론입니다. 시공 후에도 책임지고 사후관리를 진행합니다. 하자 발생 시 연락 주시면 빠르게 조치해 드립니다.</p></div></div>
+      <div class="faq reveal"><button class="faq-q">예산에 맞춰 시공이 가능한가요?<span class="ico">+</span></button><div class="faq-a"><p>네. 고객님의 예산 범위를 먼저 여쭤보고, 그 안에서 우선순위를 정해 가장 만족스러운 결과를 낼 수 있도록 제안해 드립니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST / PERSON ===== -->
+<section class="sec trust">
+  <div class="wrap trust-grid">
+    <div class="trust-photo reveal">
+      <img src="images/trust-person.png" alt="도면을 들고 있는 JOY INTERIOR 대표 최광열" />
+      <div class="sig"><b>대표 최광열</b><span>JOY INTERIOR · 20년 현장을 지켜온 손끝</span></div>
+    </div>
+    <div class="reveal d1">
+      <span class="eyebrow"><span class="idx">06</span> CRAFTSMANSHIP</span>
+      <p class="trust-quote">“유행보다 <span class="em">오래 편안한 공간</span>을 만듭니다.<br>도면 한 장, 마감 하나까지<br><span class="em">직접 챙기는 것</span>이 20년 동안 지켜온 방식입니다.”</p>
+      <p class="trust-sign">— <b>JOY INTERIOR</b> 대표 최광열</p>
+      <div class="hero-actions" style="margin-top:30px">
+        <a href="tel:010-3714-5227" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          지금 상담하기
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="sec contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow" style="color:var(--beige)"><span class="idx" style="color:rgba(255,255,255,.5)">07</span> CONTACT</span>
+      <h2>공간에 기쁨을 더할<br>준비가 되셨나요?</h2>
+      <p class="lead">작은 부분 시공부터 전체 리모델링까지,<br>편하게 전화 주시면 정성껏 상담해 드리겠습니다.</p>
+      <div class="contact-info">
+        <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="t"><span>대표 전화</span><b>010-3714-5227</b></div></div>
+        <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></div><div class="t"><span>이메일</span><b>cyk7700@naver.com</b></div></div>
+        <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="t"><span>오시는 길</span><b>세종시 시청대로 20, 아마존타워 507호</b></div></div>
+      </div>
+    </div>
+    <div class="call-card reveal d1">
+      <div class="k">지금 바로 상담하세요</div>
+      <div class="num">010-3714-5227</div>
+      <div class="hrs">평일·주말 상담 가능 · 친절 상담</div>
+      <a href="tel:010-3714-5227" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        전화로 상담하기
+      </a>
+      <a href="mailto:cyk7700@naver.com?subject=인테리어 상담 문의&body=성함:%0D%0A연락처:%0D%0A시공 종류(주거/상업/부분):%0D%0A시공 예정 지역:%0D%0A문의 내용:%0D%0A" class="btn btn-mail">이메일로 문의하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <img class="foot-logo-img" src="images/logo-dark.png" alt="JOY INTERIOR" />
+        <p class="foot-desc">20년 경력으로 주거와 상업공간에 기쁨을 더합니다. 상담부터 사후관리까지, 정성을 다하겠습니다.</p>
+      </div>
+      <div class="foot-col">
+        <h5>CONTACT</h5>
+        <p>대표전화 · 010-3714-5227</p>
+        <p>이메일 · cyk7700@naver.com</p>
+        <p>세종시 시청대로 20, 아마존타워 507호</p>
+      </div>
+      <div class="foot-col">
+        <h5>SERVICE</h5>
+        <p>주거 리모델링</p>
+        <p>상업공간 인테리어</p>
+        <p>부분 시공</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 JOY INTERIOR. All rights reserved.</span>
+      <span>대표 최광열</span>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:010-3714-5227" class="float-call">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  <span>전화 상담</span>
+</a>
+
+<script>
+  // ===== Cinematic hero scroll driver =====
+  const cine=document.getElementById('home');
+  const cLayers=[...cine.querySelectorAll('.cine-layer')];
+  const cCaps=[...cine.querySelectorAll('.cine-cap')];
+  const cBoxes=cCaps.map(c=>c.querySelector('.box'));
+  const cDots=[...cine.querySelectorAll('.cine-dots span')];
+  const cHint=cine.querySelector('.cine-hint');
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  // ramp: 0 before a, up a->b, 1 b->c, down c->d, 0 after d
+  function band(p,a,b,c,d){
+    if(p<=a||p>=d) return 0;
+    if(p<b) return (p-a)/(b-a);
+    if(p<c) return 1;
+    return 1-(p-c)/(d-c);
+  }
+  function updateCine(){
+    const total=cine.offsetHeight-innerHeight;
+    const p=clamp(-cine.getBoundingClientRect().top/total,0,1);
+    const o0=(p<0.30)?1:1-clamp((p-0.30)/0.12,0,1);
+    const o1=band(p,0.30,0.42,0.60,0.70);
+    const o2=(p>0.72)?1:band(p,0.60,0.72,1.2,1.3);
+    cLayers[0].style.opacity=o0;
+    cLayers[1].style.opacity=o1;
+    cLayers[2].style.opacity=o2;
+    cLayers[0].style.transform='scale('+(1+p*0.55).toFixed(3)+')';
+    cLayers[1].style.transform='scale('+(1.12+clamp(p-0.30,0,.42)*0.42).toFixed(3)+')';
+    cLayers[2].style.transform='scale('+(1.12+clamp(p-0.62,0,.4)*0.32).toFixed(3)+')';
+    const cv=[
+      (p<0.26)?1:1-clamp((p-0.26)/0.10,0,1),
+      band(p,0.32,0.42,0.60,0.70),
+      (p>0.76)?1:band(p,0.66,0.76,1.2,1.3)
+    ];
+    cv.forEach((o,i)=>{cCaps[i].style.opacity=o;cBoxes[i].style.transform='translateY('+((1-o)*34).toFixed(1)+'px)';});
+    const stage=p<0.36?0:(p<0.70?1:2);
+    cDots.forEach((d,i)=>d.classList.toggle('on',i===stage));
+    cHint.style.opacity=p<0.06?0.75:0;
+  }
+
+  // ===== Header + progress + scrollspy =====
+  const header=document.getElementById('header');
+  const progress=document.getElementById('progress');
+  const navLinks=[...document.querySelectorAll('.nav-links a')];
+  const sections=navLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  function updateChrome(){
+    // keep header transparent (white text) while inside the cinematic hero
+    const solid = scrollY > (cine.offsetHeight - innerHeight - 60);
+    header.classList.toggle('scrolled',solid);
+    const h=document.documentElement.scrollHeight-innerHeight;
+    progress.style.width=(h>0?scrollY/h*100:0)+'%';
+    let cur=null;
+    for(const s of sections){ if(s.getBoundingClientRect().top<=innerHeight*0.4) cur=s; }
+    navLinks.forEach(a=>a.classList.toggle('active',cur&&a.getAttribute('href')==='#'+cur.id));
+  }
+
+  let ticking=false;
+  function onScroll(){
+    if(ticking) return; ticking=true;
+    requestAnimationFrame(()=>{ updateCine(); updateChrome(); ticking=false; });
+  }
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll,{passive:true});
+  updateCine(); updateChrome();
+
+  // Mobile menu
+  const mm=document.getElementById('mobileMenu');
+  document.getElementById('burger').onclick=()=>mm.classList.add('open');
+  document.getElementById('menuClose').onclick=()=>mm.classList.remove('open');
+  mm.querySelectorAll('a').forEach(a=>a.onclick=()=>mm.classList.remove('open'));
+
+  // Reveal on scroll
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Count up
+  const counted=new WeakSet();
+  const cio=new IntersectionObserver((es)=>es.forEach(e=>{
+    if(e.isIntersecting && !counted.has(e.target)){
+      counted.add(e.target);
+      const el=e.target, target=+el.dataset.count, suffix=el.dataset.suffix||'';
+      let cur=0; const step=Math.max(1,Math.round(target/60));
+      const t=setInterval(()=>{
+        cur+=step; if(cur>=target){cur=target;clearInterval(t)}
+        el.innerHTML=cur+'<span class="suf">'+suffix+'</span>';
+      },22);
+    }
+  }),{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+  // Portfolio filter
+  const fbtns=document.querySelectorAll('.pf-filter button');
+  fbtns.forEach(b=>b.onclick=()=>{
+    fbtns.forEach(x=>x.classList.remove('on'));b.classList.add('on');
+    const f=b.dataset.f;
+    document.querySelectorAll('.pf-item').forEach(it=>{
+      const show=f==='all'||it.dataset.cat===f;
+      it.style.display=show?'':'none';
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q=>q.onclick=()=>{
+    const f=q.parentElement, a=f.querySelector('.faq-a'), open=f.classList.contains('open');
+    document.querySelectorAll('.faq').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-a').style.maxHeight=null});
+    if(!open){f.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+</script>
+</body>
+</html>
