@@ -411,7 +411,8 @@
   .cine-cap h2{color:#fff;font-size:clamp(32px,5.4vw,62px);font-weight:800;line-height:1.1;letter-spacing:-.04em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
   .cine-cap p{color:rgba(255,255,255,.86);font-size:clamp(16px,1.9vw,19px);margin-top:22px;max-width:480px;text-shadow:0 1px 20px rgba(0,0,0,.3)}
   .cine-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-  .cine-actions .hero-blog{flex-basis:100%;width:fit-content;max-width:100%}
+  .cine-actions .hero-blog-row{flex-basis:100%}
+  .cine-actions .hero-blog{width:fit-content;max-width:100%}
   .btn-ghost-light{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4);backdrop-filter:blur(6px)}
   .btn-ghost-light:hover{background:rgba(255,255,255,.2);border-color:#fff;transform:translateY(-3px)}
   .cine-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;color:rgba(255,255,255,.75);font-size:11px;letter-spacing:.24em;font-weight:600;transition:opacity .4s}
@@ -468,7 +469,7 @@
     .float-call{padding:16px;border-radius:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px))}
     .float-blog{bottom:calc(86px + env(safe-area-inset-bottom,0px));width:52px;height:52px;padding:0;border-radius:50%}
     .float-blog span{display:none}
-    .hero-blog{width:100%;padding:15px 12px;font-size:14px;gap:8px}
+    .hero-blog{padding:15px 12px;font-size:14px;gap:8px}
     .cine{height:300vh}
     .cine-dots{display:none}
     .cine-cap .box{max-width:none;padding-right:10px}
@@ -536,10 +537,12 @@
             전화 상담하기
           </a>
           <a href="#portfolio" class="btn btn-ghost-light">시공사례 둘러보기</a>
-          <a href="https://blog.naver.com/cky7700" target="_blank" rel="noopener noreferrer" class="btn btn-primary hero-blog">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        네이버 블로그에서 시공사례 더보기
-      </a>
+          <div class="hero-blog-row">
+            <a href="https://blog.naver.com/cky7700" target="_blank" rel="noopener noreferrer" class="btn btn-primary hero-blog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          네이버 블로그에서 시공사례 더보기
+        </a>
+          </div>
         </div>
       </div></div></div>
     </div>
