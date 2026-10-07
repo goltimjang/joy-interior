@@ -351,7 +351,14 @@
   }
   .float-call:hover{transform:translateY(-4px) scale(1.03)}
   .float-call svg{width:20px;height:20px}
-  .float-blog{display:none}
+  .float-blog{
+    position:fixed;right:22px;bottom:86px;z-index:90;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:10px 20px;border-radius:100px;background:#03c75a;color:#fff;font-size:15px;font-weight:700;
+    box-shadow:0 8px 24px -8px rgba(3,199,90,.5);transition:transform .3s var(--ease);
+  }
+  .float-blog:hover{transform:translateY(-4px)}
+  .float-blog svg{width:34px;height:34px;flex-shrink:0}
   .float-blog:focus-visible,.float-call:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
   @keyframes pulse{0%{box-shadow:0 16px 40px -12px rgba(124,90,63,.6),0 0 0 0 rgba(164,117,81,.4)}70%{box-shadow:0 16px 40px -12px rgba(124,90,63,.6),0 0 0 16px rgba(164,117,81,0)}100%{box-shadow:0 16px 40px -12px rgba(124,90,63,.6),0 0 0 0 rgba(164,117,81,0)}}
 
@@ -404,6 +411,7 @@
   .cine-cap h2{color:#fff;font-size:clamp(32px,5.4vw,62px);font-weight:800;line-height:1.1;letter-spacing:-.04em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
   .cine-cap p{color:rgba(255,255,255,.86);font-size:clamp(16px,1.9vw,19px);margin-top:22px;max-width:480px;text-shadow:0 1px 20px rgba(0,0,0,.3)}
   .cine-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .cine-actions .hero-blog{flex-basis:100%;width:fit-content;max-width:100%}
   .btn-ghost-light{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4);backdrop-filter:blur(6px)}
   .btn-ghost-light:hover{background:rgba(255,255,255,.2);border-color:#fff;transform:translateY(-3px)}
   .cine-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;color:rgba(255,255,255,.75);font-size:11px;letter-spacing:.24em;font-weight:600;transition:opacity .4s}
@@ -458,14 +466,9 @@
     .hero-visual{height:340px}
     .float-call span{display:none}
     .float-call{padding:16px;border-radius:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px))}
-    .float-blog{
-      position:fixed;right:22px;bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:90;
-      display:flex;align-items:center;justify-content:center;width:52px;height:52px;
-      border-radius:50%;background:#03c75a;color:#fff;
-      box-shadow:0 8px 24px -8px rgba(3,199,90,.5);transition:transform .3s var(--ease);
-    }
-    .float-blog:hover{transform:translateY(-4px)}
-    .float-blog svg{width:34px;height:34px}
+    .float-blog{bottom:calc(86px + env(safe-area-inset-bottom,0px));width:52px;height:52px;padding:0;border-radius:50%}
+    .float-blog span{display:none}
+    .hero-blog{width:100%;padding:15px 12px;font-size:14px;gap:8px}
     .cine{height:300vh}
     .cine-dots{display:none}
     .cine-cap .box{max-width:none;padding-right:10px}
@@ -533,6 +536,10 @@
             전화 상담하기
           </a>
           <a href="#portfolio" class="btn btn-ghost-light">시공사례 둘러보기</a>
+          <a href="https://blog.naver.com/cky7700" target="_blank" rel="noopener noreferrer" class="btn btn-primary hero-blog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        네이버 블로그에서 시공사례 더보기
+      </a>
         </div>
       </div></div></div>
     </div>
@@ -631,12 +638,6 @@
       <div class="pf-item reveal" data-cat="part"><img class="ph" loading="lazy" src="images/pf-kitchen.png" alt="주방 리모델링 부분 시공" /><div class="ov"><span class="cat">부분 · 주방</span><h4>주방 리모델링</h4><p>수납 극대화</p></div></div>
       <div class="pf-item reveal d1" data-cat="shop"><img class="ph" loading="lazy" src="images/pf-office.png" alt="모던 오피스 사무공간 인테리어" /><div class="ov"><span class="cat">상업 · 매장</span><h4>모던 오피스</h4><p>사무공간 리뉴얼</p></div></div>
       <div class="pf-item reveal d2" data-cat="part"><img class="ph" loading="lazy" src="images/pf-bathroom.png" alt="호텔식 욕실 타일 시공" /><div class="ov"><span class="cat">부분 · 욕실</span><h4>호텔식 욕실</h4><p>타일 · 방수 시공</p></div></div>
-    </div>
-    <div class="reveal" style="text-align:center;margin-top:40px">
-      <a href="https://blog.naver.com/cky7700" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        네이버 블로그에서 시공사례 더보기
-      </a>
     </div>
     <p style="text-align:center;margin-top:24px;color:var(--ink-faint);font-size:14px" class="reveal">* 더 많은 실제 시공 사진과 후기는 네이버 블로그에서 확인하실 수 있습니다.</p>
   </div>
@@ -786,6 +787,7 @@
     <path d="M9 7h22a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H20l-7 5v-5H9a4 4 0 0 1-4-4V11a4 4 0 0 1 4-4Z" fill="currentColor"/>
     <text x="20" y="23" text-anchor="middle" fill="#03c75a" font-family="Arial,sans-serif" font-size="12" font-weight="700">blog</text>
   </svg>
+  <span>네이버 블로그</span>
 </a>
 <a href="tel:1588-8835" class="float-call">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
